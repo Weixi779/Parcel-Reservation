@@ -10,9 +10,9 @@ import SwiftUI
 struct UserView: View {
     
     @State var IsSignUP = false
-    var user: FetchedResults<Users>
-    
-    let backGroundColor:Color = Color("Color")
+    @Environment(\.managedObjectContext) private var moc
+    var user = User("请先登录", "请先登录", "请先登录", 0)
+
     
     let settingName1 = ["我的设置","我的收藏","我的通知","帮助与反馈"]
     let settingName2 = ["版本更新","即刻合伙人"]
@@ -25,6 +25,7 @@ struct UserView: View {
                     Spacer()
                     Button(action: { IsSignUP.toggle() }, label: {
                         Image("setting_icon")
+                            .foregroundColor(Color(themeData.Color4))
                             .padding(.horizontal, 15)
                             .padding(.vertical, 15)
                     })
@@ -32,7 +33,7 @@ struct UserView: View {
                 Spacer()
             }
             .frame(height: 100)
-            .background(backGroundColor)
+            .background(Color(themeData.Color2))
             .padding(.top, -70)
             
             VStack{
@@ -62,7 +63,7 @@ struct UserView: View {
                     Form{
                         Section{
                             ForEach(settingName1, id:\.self){ name in
-                                NavigationLink(destination: SignView(user: user).hiddenNGB()) {
+                                NavigationLink(destination: SignView().hiddenNGB()) {
                                     Text(name)
                                 }
                             }
@@ -74,7 +75,7 @@ struct UserView: View {
                             
                         }
                         Section{
-                            NavigationLink(destination: AllUserView(user: user)) {
+                            NavigationLink(destination: CoreDataPart()) {
                                 Text("走后门")
                             }
                         }
@@ -88,24 +89,30 @@ struct UserView: View {
         }
         
         //.edgesIgnoringSafeArea(.top)
-        .background(Color("Color"))
+        .background(Color(themeData.Color2))
         
     }
     func isOneName() -> String{
-        if user.count == 1 {
-            return user[0].account
-        }else{
-            return "请先登录"
-        }
+        return "请先登录"
     }
     
     func isOnePoint() -> String{
-        if user.count == 1 {
-            return "\(user[0].point)"
-        }else{
-            return "请先登录"
-        }
+        return "请先登录"
     }
 }
 
 
+struct CircleImage: View {
+    var imgName:String
+    var body: some View {
+        Image(imgName)
+            .resizable()
+            .frame(width: 75, height: 75)
+            .clipShape(Circle())
+            .overlay(
+                
+                Circle().stroke(Color.white, lineWidth: 1))
+            
+            .shadow(radius: 3)
+    }
+}

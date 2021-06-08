@@ -9,10 +9,7 @@ import SwiftUI
 import CoreData
 
 struct HomeView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    
-    @FetchRequest(entity: Users.entity(), sortDescriptors: [], predicate: NSPredicate(format: "name != %@"))
-    var users: FetchedResults<Users>
+    @Environment(\.managedObjectContext) private var moc
     
     @StateObject var couriers = CourierItems()
     
@@ -34,16 +31,15 @@ struct HomeView: View {
                 }.tag(2)
                 .hiddenNGB()
                 
-                UserView(user: users).tabItem {
+                UserView()
+                    .tabItem {
                     Image(systemName: "person")
                     Text("用户")
                 }.tag(3)
                 .hiddenNGB()
+                .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+
             }
-            
-            //            .navigationBarHidden(true)
-            //            .navigationBarTitle(Text("Home"))
-            //            .edgesIgnoringSafeArea([.top, .bottom])
         }
         
         
@@ -54,8 +50,8 @@ struct HomeView: View {
 
 
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//    }
+//}

@@ -15,38 +15,38 @@ struct AddSheetView: View {
     
     @EnvironmentObject var courierItems: CourierItems
     @Binding var showingSheet: Bool
-//    @Environment(\.presentationMode) var presentationMode
 
     static let SectionCourierCompany = ["中通","顺风","圆通","邮政","韵达","申通"]
+    
     var body: some View {
         NavigationView{
-            Form{
-                Section(header: Text("快递信息")){
-                    Picker("快递公司" , selection: $company){
-                        ForEach(Self.SectionCourierCompany,id:\.self){
-                            Text($0)
+                Form{
+                    Section(header: Text("快递信息")){
+                        Picker("快递公司" , selection: $company){
+                            ForEach(Self.SectionCourierCompany,id:\.self){
+                                Text($0)
+                            }
                         }
+                        
+                        TextField("取货码", text: $code)
+                            .keyboardType(.numbersAndPunctuation)
+                        
                     }
                     
-                    TextField("取货码", text: $code)
-                        .keyboardType(.numbersAndPunctuation)
+                    Section(header: Text("取件详情")){
+                        DatePicker("取件日期", selection: $date)
+                    }
                     
-                }
-                
-                Section(header: Text("取件详情")){
-                    DatePicker("取件日期", selection: $date)
-                }
-                Section{
-                    Button("保存快递信息"){
-                        showingAlert = IsEmpty()
-                        if(showingAlert == false){
-                            courierItems.AddCourier(company, date, code, dateConverted(date))
-                            showingSheet.toggle()
+                    Section{
+                        Button("保存快递信息"){
+                            showingAlert = IsEmpty()
+                            if(showingAlert == false){
+                                courierItems.AddCourier(company, date, code, dateConverted(date))
+                                showingSheet.toggle()
+                            }
                         }
                     }
                 }
-                
-            }
             .navigationBarTitle("来拿快递啦")
             .navigationBarItems(trailing: Button("保存"){
                 showingAlert = IsEmpty()

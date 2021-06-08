@@ -7,18 +7,27 @@
 
 import SwiftUI
 
+struct ThemeData {
+    let Color1 = "Color1"
+    let Color2 = "Color2"
+    let Color3 = "Color3"
+    let Color4 = "Color4"
+}
+
+let themeData = ThemeData()
+
 func TopHead(_ height:Int) -> some View{
-    let backGroundColor = GiveMeBackgroundColor()
 
     var body: some View{
         VStack{
-            backGroundColor
+            Color(themeData.Color2)
         }
         .frame(height: CGFloat(height))
         .edgesIgnoringSafeArea(.top)
     }
     return body
 }
+
 struct Cilp:ViewModifier{
     
     let LineWidth: CGFloat = 4
@@ -27,7 +36,7 @@ struct Cilp:ViewModifier{
     func body(content :Content) -> some View{
         content
             //剪切方法
-            .overlay(RoundedRectangle(cornerRadius: CornerRadius).stroke(Color.green,lineWidth: LineWidth))
+            .overlay(RoundedRectangle(cornerRadius: CornerRadius).stroke(Color(themeData.Color2),lineWidth: LineWidth))
             .clipShape(RoundedRectangle(cornerRadius: CornerRadius))
             .padding()
 
@@ -51,18 +60,6 @@ struct FontDesign:ViewModifier {
     }
 }
 
-func GiveMeBackgroundColor()->Color{
-    return Color("Color")
-}
-
-struct BackGroundColor:ViewModifier {
-    let backGroundColor = GiveMeBackgroundColor()
-    func body(content: Content) -> some View {
-        content
-            .background(backGroundColor)
-    }
-}
-
 struct HiddenNGB:ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -79,10 +76,6 @@ extension View{
     
     func cilp() -> some View {
         self.modifier(Cilp())
-    }
-    
-    func backGroundColor() -> some View{
-        self.modifier(BackGroundColor())
     }
     
     func hiddenNGB() -> some View{

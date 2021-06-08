@@ -18,7 +18,7 @@ struct LoginFont:ViewModifier {
 struct SignFont:ViewModifier {
     func body(content: Content) -> some View {
         content
-            .foregroundColor(Color("Color"))
+            .foregroundColor(Color(themeData.Color3))
             .padding(.top,10)
     }
 }

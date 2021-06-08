@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6002C24326579B4100C01E7B /* ADView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6002C24226579B4100C01E7B /* ADView.swift */; };
+		6050260E266CFC7300918490 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6050260D266CFC7300918490 /* UserModel.swift */; };
+		60502612266DE6F700918490 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60502611266DE6F700918490 /* ImagePickerView.swift */; };
 		60A5DE99256A364600E86AD4 /* MallImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5DE98256A364600E86AD4 /* MallImagesView.swift */; };
 		60A5DE9D256A371900E86AD4 /* MallImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5DE9C256A371900E86AD4 /* MallImages.swift */; };
-		60A5DEA1256A4BB100E86AD4 /* AllUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5DEA0256A4BB100E86AD4 /* AllUserView.swift */; };
+		60B91536266C716F00CF0EC0 /* CoreDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B91535266C716F00CF0EC0 /* CoreDataList.swift */; };
+		60B91538266C727A00CF0EC0 /* CoreDataPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B91537266C727A00CF0EC0 /* CoreDataPart.swift */; };
 		60D72E14256670870011E83E /* Parcel_ReservationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D72E13256670870011E83E /* Parcel_ReservationApp.swift */; };
 		60D72E16256670870011E83E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D72E15256670870011E83E /* HomeView.swift */; };
 		60D72E182566708A0011E83E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60D72E172566708A0011E83E /* Assets.xcassets */; };
@@ -27,7 +30,6 @@
 		60D72E66256674BC0011E83E /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D72E65256674BC0011E83E /* UserView.swift */; };
 		60D72E762566764A0011E83E /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D72E752566764A0011E83E /* SignView.swift */; };
 		60D72E7D256677C20011E83E /* ModifierUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D72E7C256677C20011E83E /* ModifierUI.swift */; };
-		60D72E812566785F0011E83E /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D72E802566785F0011E83E /* CircleImage.swift */; };
 		60D72E8925668F990011E83E /* Users+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D72E8725668F990011E83E /* Users+CoreDataClass.swift */; };
 		60D72E8A25668F990011E83E /* Users+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D72E8825668F990011E83E /* Users+CoreDataProperties.swift */; };
 		60D72E8E256694800011E83E /* CustomShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D72E8D256694800011E83E /* CustomShape.swift */; };
@@ -37,9 +39,12 @@
 
 /* Begin PBXFileReference section */
 		6002C24226579B4100C01E7B /* ADView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADView.swift; sourceTree = "<group>"; };
+		6050260D266CFC7300918490 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		60502611266DE6F700918490 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		60A5DE98256A364600E86AD4 /* MallImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallImagesView.swift; sourceTree = "<group>"; };
 		60A5DE9C256A371900E86AD4 /* MallImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallImages.swift; sourceTree = "<group>"; };
-		60A5DEA0256A4BB100E86AD4 /* AllUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUserView.swift; sourceTree = "<group>"; };
+		60B91535266C716F00CF0EC0 /* CoreDataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataList.swift; sourceTree = "<group>"; };
+		60B91537266C727A00CF0EC0 /* CoreDataPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPart.swift; sourceTree = "<group>"; };
 		60D72E10256670870011E83E /* Parcel Reservation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Parcel Reservation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D72E13256670870011E83E /* Parcel_ReservationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parcel_ReservationApp.swift; sourceTree = "<group>"; };
 		60D72E15256670870011E83E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -58,7 +63,6 @@
 		60D72E65256674BC0011E83E /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		60D72E752566764A0011E83E /* SignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
 		60D72E7C256677C20011E83E /* ModifierUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifierUI.swift; sourceTree = "<group>"; };
-		60D72E802566785F0011E83E /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		60D72E8725668F990011E83E /* Users+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Users+CoreDataClass.swift"; sourceTree = "<group>"; };
 		60D72E8825668F990011E83E /* Users+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Users+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		60D72E8D256694800011E83E /* CustomShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShape.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 				60D72E33256672310011E83E /* CourierPart */,
 				60D72E63256674980011E83E /* MallsPart */,
 				60D72E69256674C20011E83E /* UserPart */,
+				60D72E7C256677C20011E83E /* ModifierUI.swift */,
 				60D72E172566708A0011E83E /* Assets.xcassets */,
 				60D72E1C2566708A0011E83E /* Persistence.swift */,
 				60D72E212566708B0011E83E /* Info.plist */,
@@ -151,11 +156,10 @@
 			isa = PBXGroup;
 			children = (
 				60D72E2D256671FE0011E83E /* AddSheetView.swift */,
+				60D72E30256672280011E83E /* CourierView.swift */,
 				60D72E41256673280011E83E /* CourierCell.swift */,
 				60D72E44256673300011E83E /* DetailCell.swift */,
-				60D72E30256672280011E83E /* CourierView.swift */,
 				6002C24226579B4100C01E7B /* ADView.swift */,
-				60D72E7C256677C20011E83E /* ModifierUI.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,8 +168,9 @@
 			isa = PBXGroup;
 			children = (
 				60A5DE9C256A371900E86AD4 /* MallImages.swift */,
-				60A5DE98256A364600E86AD4 /* MallImagesView.swift */,
 				60D72E602566743C0011E83E /* MallsView.swift */,
+				60A5DE98256A364600E86AD4 /* MallImagesView.swift */,
+				60502611266DE6F700918490 /* ImagePickerView.swift */,
 			);
 			path = MallsPart;
 			sourceTree = "<group>";
@@ -174,11 +179,12 @@
 			isa = PBXGroup;
 			children = (
 				60D72E65256674BC0011E83E /* UserView.swift */,
-				60D72E92256697D40011E83E /* ModifierUII.swift */,
-				60D72E802566785F0011E83E /* CircleImage.swift */,
-				60A5DEA0256A4BB100E86AD4 /* AllUserView.swift */,
+				60B91537266C727A00CF0EC0 /* CoreDataPart.swift */,
+				60B91535266C716F00CF0EC0 /* CoreDataList.swift */,
 				60D72E752566764A0011E83E /* SignView.swift */,
 				60D72E8D256694800011E83E /* CustomShape.swift */,
+				60D72E92256697D40011E83E /* ModifierUII.swift */,
+				6050260D266CFC7300918490 /* UserModel.swift */,
 			);
 			path = UserPart;
 			sourceTree = "<group>";
@@ -253,13 +259,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				60D72E45256673300011E83E /* DetailCell.swift in Sources */,
+				60B91536266C716F00CF0EC0 /* CoreDataList.swift in Sources */,
 				60D72E3C256672820011E83E /* CourierItems.swift in Sources */,
 				60D72E42256673280011E83E /* CourierCell.swift in Sources */,
 				60D72E31256672280011E83E /* CourierView.swift in Sources */,
 				60D72E97256A0F190011E83E /* Advertising.swift in Sources */,
-				60A5DEA1256A4BB100E86AD4 /* AllUserView.swift in Sources */,
 				60D72E762566764A0011E83E /* SignView.swift in Sources */,
 				60D72E1D2566708A0011E83E /* Persistence.swift in Sources */,
+				6050260E266CFC7300918490 /* UserModel.swift in Sources */,
 				60D72E8925668F990011E83E /* Users+CoreDataClass.swift in Sources */,
 				60D72E8E256694800011E83E /* CustomShape.swift in Sources */,
 				60D72E612566743C0011E83E /* MallsView.swift in Sources */,
@@ -269,13 +276,14 @@
 				60D72E7D256677C20011E83E /* ModifierUI.swift in Sources */,
 				60D72E35256672570011E83E /* Courier.swift in Sources */,
 				60D72E66256674BC0011E83E /* UserView.swift in Sources */,
-				60D72E812566785F0011E83E /* CircleImage.swift in Sources */,
 				60A5DE99256A364600E86AD4 /* MallImagesView.swift in Sources */,
 				60D72E14256670870011E83E /* Parcel_ReservationApp.swift in Sources */,
 				60D72E93256697D40011E83E /* ModifierUII.swift in Sources */,
 				60D72E202566708B0011E83E /* Parcel_Reservation.xcdatamodeld in Sources */,
+				60502612266DE6F700918490 /* ImagePickerView.swift in Sources */,
 				60A5DE9D256A371900E86AD4 /* MallImages.swift in Sources */,
 				6002C24326579B4100C01E7B /* ADView.swift in Sources */,
+				60B91538266C727A00CF0EC0 /* CoreDataPart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

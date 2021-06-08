@@ -16,27 +16,35 @@ struct CourierCell: View {
         VStack {
             List{
                 Section{
-                    ForEach(items.couriers){ courier in
-                        NavigationLink(destination: DetailCell(item: courier).environmentObject(items)) {
-                            HStack{
-                                VStack(alignment: .leading){
-                                    Text(courier.CourierCompany)
-                                        .bold()
-                                        .padding(.top, 4)
-                                    Text(courier.PickCode)
-                                        .foregroundColor(Color.gray)
-                                        .padding(.bottom, 5)
-                                }
-                                .padding(.leading,10)
-                                
-                                Spacer()
-                                Text(courier.CellDate)
+                    ForEach(items.couriers) { courier in
+                        
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(courier.PickCode)
+                                    .bold()
+                                    .font(.title3)
+                                    .padding(.top, 4)
+                                Text(courier.CourierCompany)
                                     .foregroundColor(Color.gray)
-                                
+                                    .padding(.bottom, 5)
                             }
-                            .padding(.horizontal, 10)
+                            
+                            Spacer()
+                            
+                            Text(courier.CellDate)
+                                .foregroundColor(Color.gray)
+                            
+                            Image(systemName: "arrow.right")
+                                .foregroundColor(Color(themeData.Color4))
+                                .imageScale(.large)
                         }
-                    }.onDelete(perform: removeItems)
+                        .padding(.leading)
+                        .onTapGesture { isShowing.toggle() }
+                        .sheet(isPresented: $isShowing) {
+                            DetailCell(item: courier)
+                        }
+                    }
+                    .onDelete(perform: removeItems)
                 }
             }
         }

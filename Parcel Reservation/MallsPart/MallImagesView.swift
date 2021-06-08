@@ -16,17 +16,17 @@ struct MallImagesView: View {
         GridItem(.flexible(),spacing: 5)
     ]
     var body: some View {
-        
-        ScrollView{
-            LazyVGrid(columns: columns){
-                ForEach(MallImages.commoditys){ image in
-                    ImagesCellView(MallImages: image)
+ 
+            ScrollView{
+                LazyVGrid(columns: columns){
+                    ForEach(MallImages.commoditys){ image in
+                        ImagesCellView(MallImages: image)
+                    }
+                    .padding([.horizontal,.top])
                 }
-                .padding([.horizontal,.top])
-//                .overlay(Rectangle().stroke(Color.white, lineWidth: 1))
-
             }
-        }
+        
+
     }
 }
 
@@ -44,10 +44,9 @@ struct ImagesCellView: View {
                 ZStack {
                     Color.white
                         .frame(height: 40)
-                    VStack {
+                    VStack(alignment: .leading) {
                         HStack {
                             Text(MallImages.imageString)
-                            Spacer()
                         }
                         .padding([.horizontal])
                         Spacer(minLength: 0)
@@ -59,7 +58,6 @@ struct ImagesCellView: View {
                             Spacer()
                         }
                         .padding([.horizontal])
-
                     }
                 }
 
@@ -68,6 +66,8 @@ struct ImagesCellView: View {
         }
         .cornerRadius(10)
         .shadow(radius: 5)
+        .padding(.bottom)
+
     }
 
 }
@@ -76,45 +76,3 @@ struct MallImages_Previews: PreviewProvider {
         MallImagesView(MallImages: Commodity())
     }
 }
-
-//ZStack{
-//    ZStack{
-//        Image("\(image.imageString)")
-//            .resizable()
-//            .frame(height:150)
-//            .overlay(Rectangle().stroke(Color.white, lineWidth: 1))
-//            .padding()
-//
-//        VStack{
-//            Spacer()
-//            VStack{
-//                My_Color
-//                    .frame(height: 40)
-//            }
-//        }
-//    }
-//    VStack{
-//        Spacer()
-//        VStack{
-//            HStack{
-//                Text("\(image.imageString)")
-//                    .font(.subheadline)
-//                    .foregroundColor(.white)
-//
-//            }
-//            .padding(.bottom,-7)
-//            HStack{
-//                Spacer()
-//                Image("coins")
-//                    .resizable()
-//                    .frame(width: 15, height: 15)
-//                Text("\(image.pointCast)")
-//                    .font(.subheadline)
-//                    .foregroundColor(.white)
-//
-//            }
-//            .padding(.horizontal)
-//
-//        }
-//
-//    }

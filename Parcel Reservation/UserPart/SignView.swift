@@ -10,9 +10,8 @@ import CoreData
 
 struct SignView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    var user: FetchedResults<Users>
     var body: some View {
-        LoginSignView(user: user)
+        LoginSignView()
             .edgesIgnoringSafeArea(.all)
             .statusBar(hidden: true)
     }
@@ -21,7 +20,6 @@ struct SignView: View {
 struct LoginSignView : View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment (\.presentationMode) var presentationMode
-    var user: FetchedResults<Users>
 
     @State var IsSignUP = false
     @State var username = ""
@@ -34,7 +32,7 @@ struct LoginSignView : View {
             
             ZStack{
                 LoginBackGround(IsSignUP: $IsSignUP)
-                LoginView(user: user, IsSignup: $IsSignUP, username: $username, pass: $pass)
+                LoginView(IsSignup: $IsSignUP, username: $username, pass: $pass)
             }
             .offset(y: IsSignUP ? -UIScreen.main.bounds.height + (UIScreen.main.bounds.height < 750 ? 100 : 130) : 0)
             .zIndex(1)
@@ -42,8 +40,6 @@ struct LoginSignView : View {
             SignUpView(IsSignUP: $IsSignUP, username: $username, pass: $pass ,rePass: $rePass)
         }
         .background(Color.white.edgesIgnoringSafeArea(.all))
-        
-        .preferredColorScheme(IsSignUP ? .dark : .light)
     }
 }
 
@@ -52,7 +48,7 @@ struct LoginBackGround:View {
     var body: some View{
         ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
             
-            Color("Color")
+            Color(themeData.Color2)
                 .clipShape(CShape())
                         
             Path{path in
@@ -73,7 +69,7 @@ struct LoginBackGround:View {
         }) {
             Image(systemName: IsSignUP ? "xmark" : "person.fill")
                 .font(.system(size: 25, weight: .bold))
-                .foregroundColor(Color("Color"))
+                .foregroundColor(Color(themeData.Color4))
         }
         .offset(x: -110, y: -40)
         .disabled(IsSignUP ? false : true)
@@ -85,7 +81,7 @@ struct LoginBackGround:View {
         }) {
             Image(systemName: IsSignUP ? "person.fill.badge.plus" : "xmark")
                 .font(.system(size: IsSignUP ? 26 : 25, weight: .bold))
-                .foregroundColor(.white)
+                .foregroundColor(Color(themeData.Color4))
         }
         .offset(x: -30, y: -40)
         .disabled(IsSignUP ? true : false)
@@ -96,7 +92,6 @@ struct LoginView:View {
     @Environment (\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) private var viewContext
 
-    @State var user: FetchedResults<Users>
     @Binding var IsSignup: Bool
     @Binding var username: String
     @Binding var pass: String
@@ -141,7 +136,7 @@ struct LoginView:View {
         } label: {
             Text("Back")
                 .fontWeight(.bold)
-                .foregroundColor(Color("Color"))
+                .foregroundColor(Color(themeData.Color2))
                 .padding(.vertical)
                 .padding(.horizontal,20)
                 .background(Color.white)
@@ -155,11 +150,11 @@ struct LoginView:View {
     }
     var checkButton: some View{
         Button(action: {
-            checkUser(username, pass)
+            //checkUser(username, pass)
         }) {
             Text("Login")
                 .fontWeight(.bold)
-                .foregroundColor(Color("Color"))
+                .foregroundColor(Color(themeData.Color2))
                 .padding(.vertical)
                 .padding(.horizontal,45)
                 .background(Color.white)
@@ -167,24 +162,24 @@ struct LoginView:View {
         }
     }
     
-    private func checkUser(_ name:String,_ pass:String){
-        for i in user{
-            if i.name == name{
-                print("找到账号")
-                if i.password == pass {
-                    print("登录成功")
-                    let sb = FetchRequest<Users>(entity: Users.entity(), sortDescriptors: [], predicate: NSPredicate(format: "name == %@", i.name))
-                    var temp : FetchedResults<Users> {sb.wrappedValue}
-                    user = temp
-                    break
-                }else{
-                    print("登录失败")
-                }
-            }else{
-                print("没有账号")
-            }
-        }
-    }
+//    private func checkUser(_ name:String,_ pass:String){
+//        for i in user{
+//            if i.name == name{
+//                print("找到账号")
+//                if i.password == pass {
+//                    print("登录成功")
+//                    let sb = FetchRequest<Users>(entity: Users.entity(), sortDescriptors: [], predicate: NSPredicate(format: "name == %@", i.name))
+//                    var temp : FetchedResults<Users> {sb.wrappedValue}
+//                    user = temp
+//                    break
+//                }else{
+//                    print("登录失败")
+//                }
+//            }else{
+//                print("没有账号")
+//            }
+//        }
+//    }
 }
 //-MARK: 注册界面
 struct SignUpView: View {
@@ -204,13 +199,13 @@ struct SignUpView: View {
                 Spacer()
                 Text("Sign Up")
                     .font(.system(size: 35, weight: .bold))
-                    .foregroundColor(Color("Color"))
+                    .foregroundColor(Color(themeData.Color3))
             }
             
             Text("Username").signFont()
             VStack{
                 TextField("Useraname", text: $username)
-                    .accentColor(Color.black)
+                    .accentColor(Color(themeData.Color3))
                     .foregroundColor(.black)
                 divider
             }
@@ -252,7 +247,7 @@ struct SignUpView: View {
                 .foregroundColor(.white)
                 .padding(.vertical)
                 .padding(.horizontal,20)
-                .background(Color("Color"))
+                .background(Color(themeData.Color3))
                 .clipShape(Capsule())
         }
     }
@@ -272,7 +267,7 @@ struct SignUpView: View {
                 .foregroundColor(.white)
                 .padding(.vertical)
                 .padding(.horizontal,45)
-                .background(Color("Color"))
+                .background(Color(themeData.Color3))
                 .clipShape(Capsule())
         }
     }

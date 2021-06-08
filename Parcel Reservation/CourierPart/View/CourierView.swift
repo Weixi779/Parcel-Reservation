@@ -17,16 +17,16 @@ struct CourierView: View {
     var body: some View {
             VStack{
                 TopHead(90)
+                    .shadow(radius: 10)
                 VStack{
                     HStack{
                         Spacer()
                         Button(action: { showAddView.toggle() } ) {
                             Image(systemName: "plus")
-                                .foregroundColor(Color(red: 85/255, green: 172/255, blue: 104/255))
+                                .foregroundColor(Color(themeData.Color4))
                                 .imageScale(.large)
                         }
-                        .padding(.vertical,15)
-                        .padding(.horizontal,15)
+                        .padding()
                         .sheet(isPresented: $showAddView) {
                             AddSheetView(showingSheet: $showAddView)
                                 .environmentObject(items)
@@ -35,13 +35,12 @@ struct CourierView: View {
                     }
                     Spacer()
                 }
-                .backGroundColor()
                 .frame(height: 70)
                 .padding(.top, -70)
                 
                 VStack{
                     TabViewDemo()
-                        .cilp().shadow(radius: 20)
+                        .cilp()
                         .padding(.horizontal,15)
                         .padding(.vertical,15)
                     VStack{

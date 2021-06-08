@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
-
+import CoreData
 @main
 struct Parcel_ReservationApp: App {
     let persistenceController = PersistenceController.shared
-
+    
     var body: some Scene {
         WindowGroup {
             HomeView()
