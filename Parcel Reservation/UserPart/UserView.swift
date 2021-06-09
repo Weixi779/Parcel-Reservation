@@ -11,7 +11,7 @@ struct UserView: View {
     
     @State var IsSignUP = false
     @Environment(\.managedObjectContext) private var moc
-    var user = User("请先登录", "请先登录", "请先登录", 0)
+    @ObservedObject var user = User()
 
     
     let settingName1 = ["我的设置","我的收藏","我的通知","帮助与反馈"]

@@ -47,8 +47,5 @@ class CourierItems: ObservableObject{
         couriers.remove(at: index)
     }
     
-//    func RewriteCompany(<#parameters#>) -> <#return type#> {
-//        <#function body#>
-//    }
     
 }

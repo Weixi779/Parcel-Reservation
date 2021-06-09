@@ -178,13 +178,13 @@
 		60D72E69256674C20011E83E /* UserPart */ = {
 			isa = PBXGroup;
 			children = (
+				6050260D266CFC7300918490 /* UserModel.swift */,
 				60D72E65256674BC0011E83E /* UserView.swift */,
 				60B91537266C727A00CF0EC0 /* CoreDataPart.swift */,
 				60B91535266C716F00CF0EC0 /* CoreDataList.swift */,
 				60D72E752566764A0011E83E /* SignView.swift */,
 				60D72E8D256694800011E83E /* CustomShape.swift */,
 				60D72E92256697D40011E83E /* ModifierUII.swift */,
-				6050260D266CFC7300918490 /* UserModel.swift */,
 			);
 			path = UserPart;
 			sourceTree = "<group>";

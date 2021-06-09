@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User {
+struct orderUser {
     private var account: String
     private var password: String
     private var name: String
@@ -19,5 +19,13 @@ struct User {
         self.password = password
         self.name = name
         self.point = point
+    }
+}
+
+
+class User: ObservableObject {
+    @Published var user: orderUser
+    init() {
+        user = orderUser("请先登录", "请先登录", "请先登录", 0)
     }
 }
